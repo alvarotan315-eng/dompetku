@@ -1,0 +1,317 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#eef2f7;
+    color:#2d3748;
+}
+
+.container{
+    max-width:900px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+    font-size:34px;
+    color:#16a34a;
+}
+
+.logo h1{
+    font-size:34px;
+    font-weight:700;
+}
+
+header p{
+    margin-top:10px;
+    color:#64748b;
+}
+
+/* ===========================
+   BALANCE CARD
+=========================== */
+
+.balance-card{
+    background:linear-gradient(135deg,#16a34a,#22c55e);
+    color:white;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    margin-bottom:25px;
+    box-shadow:0 15px 35px rgba(34,197,94,.25);
+}
+
+.balance-card span{
+    opacity:.9;
+    font-size:15px;
+}
+
+.balance-card h2{
+    margin-top:10px;
+    font-size:38px;
+    font-weight:700;
+}
+
+/* ===========================
+   SUMMARY
+=========================== */
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+    margin-bottom:25px;
+}
+
+.summary-box{
+    background:white;
+    border-radius:16px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+    transition:.25s;
+}
+
+.summary-box:hover{
+    transform:translateY(-4px);
+}
+
+.summary-box i{
+    width:55px;
+    height:55px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    color:white;
+    font-size:20px;
+}
+
+.income i{
+    background:#16a34a;
+}
+
+.expense i{
+    background:#dc2626;
+}
+
+.asset i{
+    background:#2563eb;
+}
+
+.debt i{
+    background:#f59e0b;
+}
+
+.summary-box h4{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:5px;
+}
+
+.summary-box h3{
+    font-size:20px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+}
+
+.card h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+    color:#1e293b;
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input,
+select{
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    font-size:15px;
+    transition:.25s;
+}
+
+input:focus,
+select:focus{
+    outline:none;
+    border-color:#22c55e;
+    box-shadow:0 0 0 4px rgba(34,197,94,.15);
+}
+
+button{
+    border:none;
+    background:#16a34a;
+    color:white;
+    padding:14px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    background:#15803d;
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.double-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* ===========================
+   LIST
+=========================== */
+
+ul{
+    list-style:none;
+    margin-top:18px;
+}
+
+ul li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px;
+    border-bottom:1px solid #e5e7eb;
+}
+
+#transactionList{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.transaction{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-radius:12px;
+    background:#f8fafc;
+    border-left:5px solid #22c55e;
+}
+
+.transaction.expense{
+    border-left-color:#ef4444;
+}
+
+.transaction small{
+    color:#64748b;
+}
+
+.empty{
+    text-align:center;
+    color:#94a3b8;
+    padding:20px;
+}
+
+/* ===========================
+   CHART
+=========================== */
+
+canvas{
+    width:100% !important;
+    max-height:320px;
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#cbd5e1;
+    border-radius:10px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.container{
+    padding:15px;
+}
+
+.balance-card h2{
+    font-size:30px;
+}
+
+.logo h1{
+    font-size:28px;
+}
+
+.double-grid{
+    grid-template-columns:1fr;
+}
+
+.summary-grid{
+    grid-template-columns:1fr;
+}
+
+.card{
+    padding:20px;
+}
+
+.summary-box{
+    padding:18px;
+}
+
+      }
