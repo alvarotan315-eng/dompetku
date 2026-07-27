@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dompetku</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="logo">
+<i class="fa-solid fa-wallet"></i>
+<h1>Dompetku</h1>
+</div>
+
+<p>Kelola keuanganmu dengan sederhana.</p>
+
+</header>
+
+<section class="balance-card">
+
+<span>Total Cash</span>
+
+<h2 id="cashDisplay">
+Rp0
+</h2>
+
+</section>
+
+<section class="summary-grid">
+
+<div class="summary-box income">
+
+<i class="fa-solid fa-arrow-trend-up"></i>
+
+<div>
+
+<h4>Pemasukan</h4>
+
+<h3 id="totalIncome">
+Rp0
+</h3>
+
+</div>
+
+</div>
+
+<div class="summary-box expense">
+
+<i class="fa-solid fa-arrow-trend-down"></i>
+
+<div>
+
+<h4>Pengeluaran</h4>
+
+<h3 id="totalExpense">
+Rp0
+</h3>
+
+</div>
+
+</div>
+
+<div class="summary-box asset">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<div>
+
+<h4>Aset</h4>
+
+<h3 id="totalAsset">
+Rp0
+</h3>
+
+</div>
+
+</div>
+
+<div class="summary-box debt">
+
+<i class="fa-solid fa-file-invoice-dollar"></i>
+
+<div>
+
+<h4>Liabilitas</h4>
+
+<h3 id="totalLiability">
+Rp0
+</h3>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+<i class="fa-solid fa-plus"></i>
+
+Tambah Pemasukan
+
+</h2>
+
+<form id="incomeForm">
+
+<input
+type="number"
+id="incomeAmount"
+placeholder="Nominal">
+
+<select id="incomeCategory">
+
+<option>Gaji</option>
+
+<option>Investasi</option>
+
+<option>Bisnis</option>
+
+<option value="Lainnya">Lainnya</option>
+
+</select>
+
+<input
+type="text"
+id="incomeOther"
+placeholder="Kategori lainnya">
+
+<button type="submit">
+
+Tambah
+
+</button>
+
+</form>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+<i class="fa-solid fa-minus"></i>
+
+Tambah Pengeluaran
+
+</h2>
+
+<form id="expenseForm">
+
+<input
+type="number"
+id="expenseAmount"
+placeholder="Nominal">
+
+<select id="expenseCategory">
+
+<option>Makan</option>
+
+<option>Listrik</option>
+
+<option>Air</option>
+
+<option>Kuota Internet</option>
+
+<option value="Lainnya">Lainnya</option>
+
+</select>
+
+<input
+type="text"
+id="expenseOther"
+placeholder="Kategori lainnya">
+
+<button type="submit">
+
+Tambah
+
+</button>
+
+</form>
+
+</section>
+
+<section class="double-grid">
+
+<div class="card">
+
+<h2>
+
+<i class="fa-solid fa-piggy-bank"></i>
+
+Tambah Aset
+
+</h2>
+
+<form id="assetForm">
+
+<select id="assetType">
+
+<option>Saham</option>
+
+<option>Reksadana</option>
+
+<option>Crypto</option>
+
+<option>Lainnya</option>
+
+</select>
+
+<input
+type="number"
+id="assetValue"
+placeholder="Nominal">
+
+<button type="submit">
+
+Tambah
+
+</button>
+
+</form>
+
+<ul id="assetList"></ul>
+
+</div>
+
+<div class="card">
+
+<h2>
+
+<i class="fa-solid fa-credit-card"></i>
+
+Tambah Liabilitas
+
+</h2>
+
+<form id="liabilityForm">
+
+<input
+type="number"
+id="liabilityValue"
+placeholder="Nominal">
+
+<button type="submit">
+
+Tambah
+
+</button>
+
+</form>
+
+<ul id="liabilityList"></ul>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Ringkasan Keuangan
+
+</h2>
+
+<canvas id="financeChart"></canvas>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+<i class="fa-solid fa-clock-rotate-left"></i>
+
+Riwayat Transaksi
+
+</h2>
+
+<div id="transactionList">
+
+<p class="empty">
+
+Belum ada transaksi.
+
+</p>
+
+</div>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+  </html>
